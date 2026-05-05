@@ -44,7 +44,8 @@ class FCFApp:
         
         ttk.Button(frame_freq, text="- 1 Hz (Disminuir)", command=self.bajar_freq).pack(side=tk.LEFT, padx=10, pady=5)
         ttk.Button(frame_freq, text="+ 1 Hz (Aumentar)", command=self.subir_freq).pack(side=tk.RIGHT, padx=10, pady=5)
-        ttk.Button(frame_freq, text="RESETEAR a 50 Hz", command=self.resetear).pack(pady=10)
+        ttk.Button(frame_freq, text="Reset a 50 Hz", command=self.resetear_50).pack(side=tk.LEFT, padx=10, pady=10)
+        ttk.Button(frame_freq, text="Reset a 5 Hz", command=self.resetear_5).pack(side=tk.RIGHT, padx=10, pady=10)
 
         # --- SECCIÓN 4: REGISTRO DE DATOS ---
         frame_reg = ttk.LabelFrame(root, text="Registro de Datos")
@@ -83,8 +84,12 @@ class FCFApp:
         self.freq += 1
         self.actualizar_pantalla()
 
-    def resetear(self):
-        self.freq = 50
+    def resetear_50(self):
+         self.freq = 50
+        self.actualizar_pantalla()
+
+    def resetear_5(self):
+        self.freq = 5
         self.actualizar_pantalla()
 
     def actualizar_pantalla(self):
