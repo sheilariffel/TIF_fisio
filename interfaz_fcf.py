@@ -85,7 +85,7 @@ class FCFApp:
         self.actualizar_pantalla()
 
     def resetear_50(self):
-         self.freq = 50
+        self.freq = 50
         self.actualizar_pantalla()
 
     def resetear_5(self):
